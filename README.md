@@ -29,7 +29,7 @@ This lab organized with the following background.
 
 Then, what if there is a camera that can see the road without any blind spot and fast detection program like YOLO? Stable recognition and repond to obstacle can be realized. So, stay focused and follow the content.
 
-|         ![](images/figure1.jpg)         |           ![](figure2.jpg)           |            ![](figure3.jpg)            |
+|         ![](images/figure1.jpg)         |           ![](images/figure2.jpg)           |            ![](images/figure3.jpg)            |
 | :------------------------------: | :----------------------------------: | :------------------------------------: |
 | *Figure 1. A-Pillar Blind Spots* | *Figure 2. Perspectives of A-Pillar* | *Figure 3. Continental's OLED Display* |
 
@@ -39,7 +39,7 @@ Then, what if there is a camera that can see the road without any blind spot and
 
 #### Hardware
 
-| <img src="figure4.jpg" style="zoom: 50%;" /> |
+| <img src="images/figure4.jpg" style="zoom: 50%;" /> |
 | :------------------------------------------: |
 |        Logitech Korea C310 WebCam HD         |
 
@@ -78,7 +78,7 @@ Then, what if there is a camera that can see the road without any blind spot and
   conda update -n base -c defaults conda
   ```
 
-![install1](C:/Users/elite/Desktop/DeepLearningImageProcessing/DLIP_FinalProject_21800238_%EB%A5%98%ED%98%9C%EB%B9%88/install1.png)
+![install1](images/install1.png)
 
 - Second, Create virtual environment for Python 3.9. Name the environment as `py39`. If you are in base, enter `conda activate py39`
 
@@ -86,7 +86,7 @@ Then, what if there is a camera that can see the road without any blind spot and
   conda create -n py39 python=3.9.12
   ```
 
-​												<img src="install2.png" alt="install2" style="zoom: 80%;" />
+​												<img src="images/install2.png" alt="install2" style="zoom: 80%;" />
 
 - Third, activate the newly created environment
 
@@ -94,7 +94,7 @@ Then, what if there is a camera that can see the road without any blind spot and
   conda activate py39
   ```
 
-  ![install3](install3.png)
+  ![images/install3](install3.png)
 
 
 
@@ -160,7 +160,7 @@ import torch
 print("cuda" if torch.cuda.is_available() else "cpu")
 ```
 
-![install4](install4.png)
+![install4](images/install4.png)
 
 If your result is,
 
@@ -178,7 +178,7 @@ solution 1) Type `conda list` in the `py39` environment
 - check whether `pytorch` is the `cuda` version. 
 - If it is not the same as the following figure, re-install. else go to **SOLUTION 2**
 
-![install5](install5.png)
+![images/install5](install5.png)
 
 solution 2) NVIDIA graphics driver update
 
@@ -198,7 +198,7 @@ Press`F1`  key  and type  `select default profile`→ choose `command prompt`
 
 like this figure.
 
-![install7](install7.png)
+![images/install7](install7.png)
 
 
 
@@ -206,7 +206,7 @@ like this figure.
 
 #### Software Process
 
-| <img src="AlgorithmandPrincipal1.JPG" alt="AlgorithmandPrincipal1" style="zoom:80%;" /> |
+| <img src="images/AlgorithmandPrincipal1.JPG" alt="AlgorithmandPrincipal1" style="zoom:80%;" /> |
 | :----------------------------------------------------------: |
 |                 *Figure 4. Software Process*                 |
 
@@ -214,7 +214,7 @@ The program will make decisions like Figure 4. Program detects the pedestrian an
 
 #### **Measurement of Distance and Velocity**
 
-![AlgorithmandPrincipal2](AlgorithmandPrincipal2.png)
+![AlgorithmandPrincipal2](images/AlgorithmandPrincipal2.png)
 
 **1) Distance**
 $$
@@ -272,7 +272,7 @@ $$
 
 **1. Select interpreter in Visual Studio Code and  Import libraries  **
 
-<img src="ProgramTutorial1.png" style="zoom:50%;" />
+<img src="images/ProgramTutorial1.png" style="zoom:50%;" />
 
 select "Python 3.9.12 ('py39') conda"
 
@@ -541,16 +541,16 @@ The program calculated time-to-collision and successfully displayed a collision 
 
 | Situation 1. Collision warning                               | Situation 2. STOP+Collision warning                          | Situation 3. AVOID                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="RESULT1.png" alt="image-20220617061445046" style="zoom: 20%;" /> | <img src="RESULT2.png" alt="image-20220617061751424" style="zoom:20%;" /> | <img src="RESULT3.png" alt="image-20220617061926820" style="zoom:20%;" /> |
+| <img src="images/RESULT1.png" alt="image-20220617061445046" style="zoom: 20%;" /> | <img src="images/RESULT2.png" alt="image-20220617061751424" style="zoom:20%;" /> | <img src="images/RESULT3.png" alt="image-20220617061926820" style="zoom:20%;" /> |
 
 <center>Figure 4. Experimental results</center>
 
 
 
-| ![](analysis.jpg)                    | ![](analysis2.jpg)                               |
+| ![](images/analysis.jpg)                    | ![](images/analysis2.jpg)                               |
 | ------------------------------------ | ------------------------------------------------ |
 | (a) measured value                   | (b) comparison true and measured distance        |
-| ![](analysis3.jpg)                   | ![](analysis4.jpg)                               |
+| ![](images/analysis3.jpg)                   | ![](images/analysis4.jpg)                               |
 | (b) comparison true and measured TTC | (b) comparison true and measured radial distance |
 
 <center>Figure 5. Validation result</center>
