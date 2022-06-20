@@ -6,7 +6,7 @@
 
 **Github:** https://github.com/khn224/DLIP_FINAL_LAB
 
-**Demo Video**
+**Demo Video:** https://www.youtube.com/watch?v=8jRxHMq5a_o
 
 
 
