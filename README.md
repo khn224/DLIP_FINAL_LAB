@@ -29,7 +29,7 @@ This lab organized with the following background.
 
 Then, what if there is a camera that can see the road without any blind spot and fast detection program like YOLO? Stable recognition and repond to obstacle can be realized. So, stay focused and follow the content.
 
-|         ![](figure1.jpg)         |           ![](figure2.jpg)           |            ![](figure3.jpg)            |
+|         ![](images/figure1.jpg)         |           ![](figure2.jpg)           |            ![](figure3.jpg)            |
 | :------------------------------: | :----------------------------------: | :------------------------------------: |
 | *Figure 1. A-Pillar Blind Spots* | *Figure 2. Perspectives of A-Pillar* | *Figure 3. Continental's OLED Display* |
 
