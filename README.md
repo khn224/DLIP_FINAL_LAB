@@ -59,9 +59,7 @@ Then, what if there is a camera that can see the road without any blind spot and
 
    Anaconda : Python and libraries package installer.
 
-   Follow: 
-
-[How to install Anaconda]: https://ykkim.gitbook.io/dlip/installation-guide/anaconda#conda-installation
+   Follow: https://ykkim.gitbook.io/dlip/installation-guide/anaconda#conda-installation
 
 
 
@@ -113,9 +111,7 @@ pip install opencv-python
 
 **4. Install Visual Studio Code**
 
-   Follow: 
-
-[How to Install VS Code]: https://ykkim.gitbook.io/dlip/installation-guide/ide/vscode#installation
+   Follow: https://ykkim.gitbook.io/dlip/installation-guide/ide/vscode#installation
 
    
 
@@ -183,7 +179,7 @@ solution 2) NVIDIA graphics driver update
 
 If the NVIDIA graphics driver is not installed or if it is an older version, the GPU may not be detected. Please refer to the 
 
-[How to install Driver, CUDA and cuDNN]: https://ykkim.gitbook.io/dlip/installation-guide/cuda-installation#9f39
+https://ykkim.gitbook.io/dlip/installation-guide/cuda-installation#9f39
 
 to install Graphic Driver.
 
@@ -360,7 +356,7 @@ model.iou  = 0.4 # IoU threshold of the model
 
 
 
-**4. Object detection(detect only person) **
+**4. Object detection(detect only person)**
 
 ```python
 while True:
