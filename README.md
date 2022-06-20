@@ -178,7 +178,7 @@ solution 1) Type `conda list` in the `py39` environment
 - check whether `pytorch` is the `cuda` version. 
 - If it is not the same as the following figure, re-install. else go to **SOLUTION 2**
 
-![images/install5](install5.png)
+![images/install5](images/install5.png)
 
 solution 2) NVIDIA graphics driver update
 
@@ -190,7 +190,7 @@ to install Graphic Driver.
 
 Trouble # 2. Build Error in VS Code (Numpy C-extension failed)
 
-<img src="install6.png" alt="install6" style="zoom:50%;" />
+<img src="images/install6.png" alt="install6" style="zoom:50%;" />
 
 solution) Default Profile Setting in CODE
 
@@ -198,7 +198,7 @@ Press`F1`  key  and type  `select default profile`→ choose `command prompt`
 
 like this figure.
 
-![images/install7](install7.png)
+![images/install7](images/install7.png)
 
 
 
@@ -206,7 +206,7 @@ like this figure.
 
 #### Software Process
 
-| <img src="images/AlgorithmandPrincipal1.JPG" alt="AlgorithmandPrincipal1" style="zoom:80%;" /> |
+| <img src="images/AlgorithmandPrincipal1.JPG" alt="images/AlgorithmandPrincipal1" style="zoom:80%;" /> |
 | :----------------------------------------------------------: |
 |                 *Figure 4. Software Process*                 |
 
@@ -214,7 +214,7 @@ The program will make decisions like Figure 4. Program detects the pedestrian an
 
 #### **Measurement of Distance and Velocity**
 
-![AlgorithmandPrincipal2](images/AlgorithmandPrincipal2.png)
+![images/AlgorithmandPrincipal2](images/AlgorithmandPrincipal2.png)
 
 **1) Distance**
 $$
