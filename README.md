@@ -492,6 +492,11 @@ while True:
                 elif not object_exists:
                     static_count = 0 # Reset static count
                     StopSignCount =0 # Reset stop sign count
+            
+            # Add new IDs found
+            for pt in center_points_cur_frame:
+                tracking_objects[track_id] = pt
+                track_id += 1
         
         for object_id, pt in tracking_objects.items():# Display Distance,Velocity , TTC and collision waring
         	cv.putText(frame, f"Distance[m]: { round(depthConst / (y2-y1),2)}", (10, 30), cv.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 5)
