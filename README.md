@@ -545,7 +545,7 @@ The program calculated time-to-collision and successfully displayed a collision 
 
 | Situation 1. Collision warning                               | Situation 2. STOP+Collision warning                          | Situation 3. AVOID                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="images/RESULT1.png" alt="image-20220617061445046" style="zoom: 20%;" /> | <img src="images/RESULT2.png" alt="image-20220617061751424" style="zoom:20%;" /> | <img src="RESULT3.png" alt="image-20220617061926820" style="zoom:20%;" /> |
+| <img src="images/RESULT1.png" alt="image-20220617061445046" style="zoom: 20%;" /> | <img src="images/RESULT2.png" alt="image-20220617061751424" style="zoom:20%;" /> | <img src="images/RESULT3.png" alt="image-20220617061926820" style="zoom:20%;" /> |
 
 *Figure 5. Experimental results*
 
