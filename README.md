@@ -518,7 +518,7 @@ while True:
 
 
 
-**6. Update variables **
+**6. Update variables**
 
 ```python
     time_prev = time_curr 
@@ -539,11 +539,12 @@ while True:
 
 The program calculated time-to-collision and successfully displayed a collision warning. Also, it successfully printed a stop sign when distance from the object was less than 4 meters. Finally, it well indicated a command to avoid an obstacle in a static state.
 
+
 | Situation 1. Collision warning                               | Situation 2. STOP+Collision warning                          | Situation 3. AVOID                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | <img src="images/RESULT1.png" alt="image-20220617061445046" style="zoom: 20%;" /> | <img src="images/RESULT2.png" alt="image-20220617061751424" style="zoom:20%;" /> | <img src="images/RESULT3.png" alt="image-20220617061926820" style="zoom:20%;" /> |
 
-<center>Figure 4. Experimental results</center>
+Figure 4. Experimental results
 
 
 
@@ -555,7 +556,7 @@ The program calculated time-to-collision and successfully displayed a collision 
 | ![](images/analysis3.jpg)                   | ![](images/analysis4.jpg)                               |
 | (b) comparison true and measured TTC | (b) comparison true and measured radial distance |
 
-<center>Figure 5. Validation result</center>
+Figure 5. Validation result
 
 
 
