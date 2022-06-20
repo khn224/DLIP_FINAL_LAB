@@ -78,7 +78,7 @@ Then, what if there is a camera that can see the road without any blind spot and
   conda update -n base -c defaults conda
   ```
 
-![install1](images/install1.png)
+![](images/install1.png)
 
 - Second, Create virtual environment for Python 3.9. Name the environment as `py39`. If you are in base, enter `conda activate py39`
 
@@ -94,7 +94,7 @@ Then, what if there is a camera that can see the road without any blind spot and
   conda activate py39
   ```
 
-  ![images/install3](install3.png)
+  ![](images/install3.png)
 
 
 
