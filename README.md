@@ -1,11 +1,10 @@
-
 # **Collision Prevention Algorithms through Unexpected Obstacle Recognition and Distance and** **Velocity** **Estimation**
 
 **Date: 2022-06-20**
 
 **Author: Kyungha Noh, Hyebin Ryu**
 
-**Github:** 
+**Github:** https://github.com/khn224/DLIP_FINAL_LAB
 
 **Demo Video**
 
@@ -94,7 +93,7 @@ Then, what if there is a camera that can see the road without any blind spot and
   conda activate py39
   ```
 
-  ![](images/install3.png)
+  ![install3](images/install3.png)
 
 
 
@@ -178,7 +177,7 @@ solution 1) Type `conda list` in the `py39` environment
 - check whether `pytorch` is the `cuda` version. 
 - If it is not the same as the following figure, re-install. else go to **SOLUTION 2**
 
-![images/install5](images/install5.png)
+![install5](images/install5.png)
 
 solution 2) NVIDIA graphics driver update
 
@@ -198,7 +197,7 @@ Press`F1`  key  and type  `select default profile`→ choose `command prompt`
 
 like this figure.
 
-![images/install7](images/install7.png)
+![install7](images/install7.png)
 
 
 
@@ -206,7 +205,7 @@ like this figure.
 
 #### Software Process
 
-| <img src="images/AlgorithmandPrincipal1.JPG" alt="images/AlgorithmandPrincipal1" style="zoom:80%;" /> |
+| <img src="images/AlgorithmandPrincipal1.jpg" alt="AlgorithmandPrincipal1" style="zoom:80%;" /> |
 | :----------------------------------------------------------: |
 |                 *Figure 4. Software Process*                 |
 
@@ -214,7 +213,7 @@ The program will make decisions like Figure 4. Program detects the pedestrian an
 
 #### **Measurement of Distance and Velocity**
 
-![images/AlgorithmandPrincipal2](images/AlgorithmandPrincipal2.png)
+![AlgorithmandPrincipal2](images/AlgorithmandPrincipal2.jpg)
 
 **1) Distance**
 $$
@@ -270,7 +269,7 @@ $$
 
 ## Program Tutorial ##
 
-**1. Select interpreter in Visual Studio Code and  Import libraries  **
+**1. Select interpreter in Visual Studio Code and  Import libraries**
 
 <img src="images/ProgramTutorial1.png" style="zoom:50%;" />
 
@@ -539,14 +538,11 @@ while True:
 
 The program calculated time-to-collision and successfully displayed a collision warning. Also, it successfully printed a stop sign when distance from the object was less than 4 meters. Finally, it well indicated a command to avoid an obstacle in a static state.
 
-
 | Situation 1. Collision warning                               | Situation 2. STOP+Collision warning                          | Situation 3. AVOID                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="images/RESULT1.png" alt="image-20220617061445046" style="zoom: 20%;" /> | <img src="images/RESULT2.png" alt="image-20220617061751424" style="zoom:20%;" /> | <img src="images/RESULT3.png" alt="image-20220617061926820" style="zoom:20%;" /> |
+| <img src="images/RESULT1.png" alt="image-20220617061445046" style="zoom: 20%;" /> | <img src="images/RESULT2.png" alt="image-20220617061751424" style="zoom:20%;" /> | <img src="RESULT3.png" alt="image-20220617061926820" style="zoom:20%;" /> |
 
-Figure 4. Experimental results
-
-
+*Figure 5. Experimental results*
 
 
 
@@ -556,14 +552,11 @@ Figure 4. Experimental results
 | ![](images/analysis3.jpg)                   | ![](images/analysis4.jpg)                               |
 | (b) comparison true and measured TTC | (b) comparison true and measured radial distance |
 
-Figure 5. Validation result
+*Figure 6. Validation result*
 
 
 
-
-
-
-Table 1. RMSE of measurements
+*Table 1. RMSE of measurements*
 
 |          | distance | radial velocity | TTC    |
 | -------- | -------- | --------------- | ------ |
@@ -571,8 +564,7 @@ Table 1. RMSE of measurements
 
 
 
-
-To validate the measurements, we made a video approaching to person in constant velocity. Figure 4, 5 shows the results and Table 1 shows the RMSE between true value and measurement value. Error is inevitable because our method is only gives rough values.  In distance and radial velocity measurement, the RMSE value were below 0.3 . Therefore, it is quite suitable for practical application such as an unexpected obstacle emergence or avoidance situation. However, in TTC measurement, RMSE value was relatively high. But it is because measured velocity and distance values are very rough.
+To validate the measurements, we made a video approaching to person in constant velocity. Figure 6 shows the results and Table 1 shows the RMSE between true value and measurement value. Error is inevitable because our method is only gives rough values.  In distance and radial velocity measurement, the RMSE value were below 0.3 . Therefore, it is quite suitable for practical application such as an unexpected obstacle emergence or avoidance situation. However, in TTC measurement, RMSE value was relatively high. But it is because measured velocity and distance values are very rough.
 
 
 
