@@ -18,7 +18,6 @@ def MovingAvg(Array): # Moving average filter (window size=30)
     Nwindow =30 # Size of window
     fwindow = Array[-Nwindow:] # Sliced window
     avg=sum(fwindow)/Nwindow # Average value
-
     return avg
 
 
@@ -49,7 +48,7 @@ depth_prev_frame         = [] # Radial distance of the object
 tracking_objects = {}  # Center points of the tracking object
 track_id = 0 # ID of the tracking object
 
-depthConst      = 480*0.8  		# Pixel-to-distance coefficient
+depthConst      = 480*3 		# Pixel-to-distance coefficient
 FOVconst        = 41 / 640 		# Pixel-to-angle coefficient
 velocity        = 0.0      		# Angular velocity of the object
 radial_velocity = 0.0       	# Radial velocity of the object
@@ -63,7 +62,7 @@ TimeToCollision = 0.0			# TTC
 Epsilon         = 0.00000001 	# To prevent zero division error
 time_prev       = cv.getTickCount() / cv.getTickFrequency() 	# Time of previous frame
 
-model      = torch.hub.load('ultralytics/yolov5', 'yolov5x', pretrained=True) # You can choose among yolo5n,yolo5s,yolo5m,yolo5l,yolo5x
+model      = torch.hub.load('ultralytics/yolov5', 'yolov5n', pretrained=True) # You can choose among yolo5n,yolo5s,yolo5m,yolo5l,yolo5x
 model.conf = 0.6 # Confidence threshold of the model
 model.iou  = 0.4 # IoU threshold of the model
 
@@ -123,7 +122,7 @@ while True:
         cv.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)# Draw bounding box
         
          # Only at the beginning we compare previous and current frame
-   	if count <= 2:
+    if count <= 2:
         for pt in center_points_cur_frame:
             for pt2 in center_points_prev_frame: 
                 distance = math.hypot(pt2[0] - pt[0], pt2[1] - pt[1])# L2 norm between center point of the previous bounding box and current bounding box
@@ -190,25 +189,27 @@ while True:
                     static_count = 0 # Reset static count
                     StopSignCount =0 # Reset stop sign count
         
-        for object_id, pt in tracking_objects.items():# Display Distance,Velocity , TTC and collision waring
-        	cv.putText(frame, f"Distance[m]: { round(depthConst / (y2-y1),2)}", (10, 30), cv.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 5)
+                # Add new IDs found
+        for pt in center_points_cur_frame:
+            tracking_objects[track_id] = pt
+            track_id += 1
+    for object_id, pt in tracking_objects.items():# Display Distance,Velocity , TTC and collision waring
+        cv.putText(frame, f"Distance[m]: { round(depthConst / (y2-y1),2)}", (10, 30), cv.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 5)
+        cv.putText(frame, f"Distance[m]: { round(depthConst / (y2-y1),2)}", (10, 30), cv.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255,255), 2)
+        cv.putText(frame, "velocity(horizontal)[m/s] : " + str(round(velocity,   2)),   (10, 60) , 0, 0.7, (0, 0, 0), 5)
         	
-            cv.putText(frame, f"Distance[m]: { round(depthConst / (y2-y1),2)}", (10, 30), cv.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255,255), 2)
+        cv.putText(frame, "velocity(horizontal)[m/s] : " + str(round(velocity,   2)),   (10, 60) , 0, 0.7, (0, 255, 255), 2)
         	
-            cv.putText(frame, "velocity(horizontal)[m/s] : " + str(round(velocity,   2)),   (10, 60) , 0, 0.7, (0, 0, 0), 5)
-        	
-            cv.putText(frame, "velocity(horizontal)[m/s] : " + str(round(velocity,   2)),   (10, 60) , 0, 0.7, (0, 255, 255), 2)
-        	
-            cv.putText(frame, "velocity(radial)[m/s]     : " + str(round(AvgRadVel,  2)),   (10, 90) , 0, 0.7, (0, 0, 0), 5)
+        cv.putText(frame, "velocity(radial)[m/s]     : " + str(round(AvgRadVel,  2)),   (10, 90) , 0, 0.7, (0, 0, 0), 5)
        	 	
-            cv.putText(frame, "velocity(radial)[m/s]     : " + str(round(AvgRadVel,  2)),   (10, 90) , 0, 0.7, (0, 255, 255), 2)
+        cv.putText(frame, "velocity(radial)[m/s]     : " + str(round(AvgRadVel,  2)),   (10, 90) , 0, 0.7, (0, 255, 255), 2)
        	 	
-            if TimeToCollision < 8 and TimeToCollision >0  : # Display collision warning if TTC is less than 8 sec
-            	cv.putText(frame, "Time to collision[s]      : " + str(round(TimeToCollision, 2)),   (10, 120), 0, 0.7, (0, 0, 0), 5)
+        if TimeToCollision < 8 and TimeToCollision >0  : # Display collision warning if TTC is less than 8 sec
+            cv.putText(frame, "Time to collision[s]      : " + str(round(TimeToCollision, 2)),   (10, 120), 0, 0.7, (0, 0, 0), 5)
             	
-                cv.putText(frame, "Time to collision[s]      : " + str(round(TimeToCollision, 2)),   (10, 120), 0, 0.7, (0, 255, 255), 2)
-            	cv.putText(frame, "COLLISION WARNING!", (150,400), 0, 1, (0, 0, 0), 5)
-            	cv.putText(frame, "COLLISION WARNING!", (150,400), 0, 1, (0, 165, 255), 2)
+            cv.putText(frame, "Time to collision[s]      : " + str(round(TimeToCollision, 2)),   (10, 120), 0, 0.7, (0, 255, 255), 2)
+            cv.putText(frame, "COLLISION WARNING!", (150,400), 0, 1, (0, 0, 0), 5)
+            cv.putText(frame, "COLLISION WARNING!", (150,400), 0, 1, (0, 165, 255), 2)
     
     time_prev = time_curr 
 
@@ -216,7 +217,7 @@ while True:
     if MODE == VIDEO: 
         out.write(frame)
 
-    # Make a copy of the points
+        # Make a copy of the points
     center_points_prev_frame = center_points_cur_frame.copy()
     depth_prev_frame = depth_cur_frame.copy()     
     
