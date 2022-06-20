@@ -547,6 +547,8 @@ The program calculated time-to-collision and successfully displayed a collision 
 
 
 
+
+
 | ![](images/analysis.jpg)                    | ![](images/analysis2.jpg)                               |
 | ------------------------------------ | ------------------------------------------------ |
 | (a) measured value                   | (b) comparison true and measured distance        |
@@ -557,11 +559,15 @@ The program calculated time-to-collision and successfully displayed a collision 
 
 
 
+
+
+
 Table 1. RMSE of measurements
 
 |          | distance | radial velocity | TTC    |
 | -------- | -------- | --------------- | ------ |
 | **RMSE** | 0.2609   | 0.2391          | 6.9226 |
+
 
 
 
